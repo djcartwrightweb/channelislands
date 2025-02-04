@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct ChannelIslandsApp: App {
+    
+    @State var mapViewModel = MapViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapView(vm: $mapViewModel)
+                .environment(mapViewModel)
         }
     }
 }
